@@ -1,8 +1,9 @@
-// Declare global interface for html2pdf to resolve TypeScript error
+'use client'
+
 declare global {
-  interface Window {
-    html2pdf: any; // Declaring html2pdf as any to bypass TypeScript type checking
-  }
+    interface Window {
+        html2pdf: any; // Declaring html2pdf as any to bypass TypeScript type checking
+    }
 }
 
 import React from 'react';
