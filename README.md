@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Axel Loui Molina - Personal CV Web Application
+This is a dynamic, single-page web application designed to showcase Axel Loui Molina's professional Curriculum Vitae. Built with Next.js and styled with Tailwind CSS, it offers a modern, responsive, and interactive presentation of skills, experience, and education.
 
-## Getting Started
+✨ Features
+Modern UI/UX: Clean, responsive design with a dark mode aesthetic for optimal viewing.
 
-First, run the development server:
+Interactive Skills Section: Skills are categorized and displayed with a 1-4 proficiency level. Skills mentioned in experience descriptions are clickable, linking directly to their entry in the skills section.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Clickable Contact Information: Phone number and email address are directly clickable for easy communication.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+PDF Download: A floating button allows users to download the CV content as a PDF document for offline viewing or sharing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dynamic Content: All CV data is managed within the application's React component, making updates straightforward.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚀 Technologies Used
+This project leverages a robust stack of modern web technologies:
 
-## Learn More
+Frontend Framework: Next.js (React)
 
-To learn more about Next.js, take a look at the following resources:
+Styling: Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+PDF Generation: html2pdf.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Core Languages: JavaScript, TypeScript
 
-## Deploy on Vercel
+📖 Usage
+Navigate the CV: Scroll through the sections to explore the professional summary, experience, skills, education, and languages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Explore Skills: Click on highlighted skills within the experience descriptions to jump directly to their entry in the comprehensive skills section.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Download PDF: Use the floating "Download CV as PDF" button in the top-right corner to save a copy of the CV.
+
