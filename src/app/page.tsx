@@ -1,17 +1,52 @@
-'use client'
+'use client';
 
 declare global {
     interface Window {
-        html2pdf: any; // Declaring html2pdf as any to bypass TypeScript type checking
+        html2pdf: any;
     }
 }
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const generateSkillId = (skillName: string) => `skill-${skillName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
 // Main App component that renders the entire CV
 const App = () => {
+    const [html2pdfLoaded, setHtml2pdfLoaded] = useState(false);
+
+    // Effect to dynamically load html2pdf.js
+    useEffect(() => {
+        const scriptId = 'html2pdf-script';
+        // Prevent re-adding script if it already exists
+        if (document.getElementById(scriptId)) {
+            setHtml2pdfLoaded(true);
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+        script.async = true; // Load script asynchronously
+        script.id = scriptId; // Assign an ID to the script
+
+        script.onload = () => {
+            console.log('html2pdf.js loaded successfully.');
+            setHtml2pdfLoaded(true); // Set state to true once script is loaded
+        };
+        script.onerror = (error) => {
+            console.error('Failed to load html2pdf.js:', error);
+            // Optionally show a user-friendly message if script fails to load
+        };
+        document.body.appendChild(script);
+
+        // Cleanup function to remove script if component unmounts
+        return () => {
+            const existingScript = document.getElementById(scriptId);
+            if (existingScript && document.body.contains(existingScript)) {
+                document.body.removeChild(existingScript);
+            }
+        };
+    }, []); // Empty dependency array ensures this runs only once on mount
+
     // Define the CV data directly within the component for a static CV
     const cvData = {
         name: "AXEL LOUI MOLINA",
@@ -191,7 +226,6 @@ const App = () => {
         }));
     }, [cvData.skills]);
 
-    // Function to format description text
     const formatDescription = (text: string) => {
         let formattedText = text;
 
@@ -218,31 +252,36 @@ const App = () => {
         if (element) {
             // Options for html2pdf.js
             const options = {
-                margin: 0.5,
+                margin: 0,
                 filename: 'Axel_Loui_Molina_CV.pdf',
                 image: {type: 'jpeg', quality: 0.98},
                 html2canvas: {scale: 2, logging: true, dpi: 192, letterRendering: true},
-                jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'},
+                jsPDF: {
+                    unit: 'in',
+                    format: 'a3',
+                    orientation: 'portrait'
+                },
             };
-            // Use the html2pdf library to generate and download the PDF
-            if (window.html2pdf) {
-                window.html2pdf().from(element).set(options).save();
+            if (html2pdfLoaded && typeof window.html2pdf === 'function') {
+                setTimeout(() => {
+                    window.html2pdf().from(element).set(options).save();
+                }, 100);
             } else {
-                console.error('html2pdf.js is not loaded.');
+                console.error('html2pdf.js is not loaded or ready.');
                 // Fallback for user if html2pdf.js is not available
                 // Using a custom message box instead of alert()
                 const messageBox = document.createElement('div');
                 messageBox.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]';
-                messageBox.innerHTML = `
-          <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-xl max-w-sm text-center">
-            <p class="mb-4">PDF generation library not loaded. Please try again or use your browser's print to PDF function (Ctrl+P or Cmd+P).</p>
-            <button id="closeMessageBox" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Close</button>
-          </div>
-        `;
+                messageBox.innerHTML = `<div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-xl max-w-sm text-center">
+                                          <p class="mb-4">PDF generation library not loaded. Please try again or use your browser's print to PDF function (Ctrl+P or Cmd+P).</p>
+                                          <button id="closeMessageBox" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Close</button>
+                                        </div>`;
                 document.body.appendChild(messageBox);
                 let closeMessageBox = document.getElementById('closeMessageBox');
                 if (closeMessageBox) {
                     closeMessageBox.onclick = () => document.body.removeChild(messageBox);
+                } else {
+                    console.warn('is already closed');
                 }
             }
         } else {
@@ -252,14 +291,11 @@ const App = () => {
 
     return (
         <div className="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-8">
-            {/* Script for html2pdf.js - loaded dynamically */}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-            {/* Download PDF Button */}
-            <div className="fixed top-4 right-4 z-50">
+            <div className="fixed top-4 right-4 z-50 flex flex-col space-y-3">
                 <button
                     onClick={handleDownloadPdf}
-                    className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+                    className={`bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 ${!html2pdfLoaded ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    disabled={!html2pdfLoaded} // Disable button until script is loaded
                 >
                     Download CV as PDF
                 </button>
@@ -276,10 +312,8 @@ const App = () => {
                         className="flex flex-col sm:flex-row justify-center items-center text-gray-300 text-sm sm:space-x-4">
                         <a href={`tel:${cvData.contact.phone}`}
                            className="hover:underline text-purple-300">{cvData.contact.phone}</a>
-                        <span>|</span>
                         <a href={`mailto:${cvData.contact.email}`}
                            className="hover:underline text-purple-300">{cvData.contact.email}</a>
-                        <span>|</span>
                         <span>{cvData.contact.location}</span>
                     </div>
                 </header>
