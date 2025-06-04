@@ -277,7 +277,7 @@ const App = () => {
                                           <button id="closeMessageBox" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Close</button>
                                         </div>`;
                 document.body.appendChild(messageBox);
-                let closeMessageBox = document.getElementById('closeMessageBox');
+                const closeMessageBox = document.getElementById('closeMessageBox');
                 if (closeMessageBox) {
                     closeMessageBox.onclick = () => document.body.removeChild(messageBox);
                 } else {
