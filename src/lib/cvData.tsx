@@ -81,7 +81,7 @@ export const cvData = {
     skills: {
         "Programming Languages": [
             {name: "Java", level: 4}, {name: "Kotlin", level: 4}, {name: "JavaScript", level: 4},
-            {name: "TypeScript", level: 4}, {name: "Python", level: 3}, {name: "C++", level: 2}
+            {name: "TypeScript", level: 4}, {name: "Python", level: 2}, {name: "C++", level: 2}
         ],
         "Frontend Frameworks & Libraries": [
             {name: "React", level: 4}, {name: "Next.js", level: 4}, {name: "Angular", level: 3},
@@ -95,7 +95,7 @@ export const cvData = {
             {name: "tRPC", level: 3}, {name: "NextAuth.js", level: 3}
         ],
         "Databases": [
-            {name: "PostgreSQL", level: 4}, {name: "SQL Server", level: 3}, {name: "MongoDB", level: 3},
+            {name: "PostgreSQL", level: 4}, {name: "SQL", level: 3}, {name: "MongoDB", level: 3},
             {name: "Relational Databases (SQL)", level: 4}, {name: "NoSQL Databases", level: 3}
         ],
         "Cloud Platforms": [

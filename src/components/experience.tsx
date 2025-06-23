@@ -11,7 +11,7 @@ interface ExperienceItemProps {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({title, company, dates, description, allSkills}) => {
     return (
-        <div className="mb-6 p-4 bg-gray-800 rounded-lg shadow-md border border-gray-700">
+        <div className="mb-6 p-4 bg-gray-800 rounded-lg shadow-md border border-gray-700 experience-item">
             <h3 className="text-xl font-semibold text-gray-100">{title}</h3>
             <p className="text-purple-500 text-lg mb-1">{company} - {dates}</p>
             <ul className="list-disc list-inside text-gray-300 space-y-1">

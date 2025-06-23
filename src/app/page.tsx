@@ -1,6 +1,5 @@
 import React from 'react';
 import {cvData} from '@/lib/cvData';
-import Link from 'next/link';
 import FloatingDownloadButton from "@/components/floatingDownloadButton";
 import Header from "@/components/header";
 import Summary from "@/components/summary";

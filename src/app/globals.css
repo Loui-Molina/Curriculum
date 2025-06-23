@@ -1,1 +1,111 @@
 @import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-gray-900 text-gray-100;
+}
+
+@media print {
+    #download-pdf-button {
+        display: none !important;
+    }
+
+    body {
+        background-color: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    .container,
+    section,
+    header,
+    .bg-gray-800,
+    .bg-gray-700 {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    h1, h2, h3, h4, strong {
+        color: black !important;
+    }
+
+    .text-purple-500,
+    .text-purple-400,
+    .bg-purple-500,
+    .bg-purple-600 {
+        color: #312f2f !important;
+        background-color: #ffffff !important;
+    }
+
+    .text-gray-100,
+    .text-gray-300,
+    .text-gray-400 {
+        color: black !important;
+    }
+
+    a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+    }
+
+    .inline-block.w-4.h-4.rounded-full {
+        background-color: #eee !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .inline-block.w-4.h-4.bg-purple-500.rounded-full {
+        background-color: #000000 !important;
+    }
+
+    .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .p-6 {
+        padding: 1rem !important;
+    }
+
+    .p-4 {
+        padding: 0.75rem !important;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+
+    .justify-center {
+        justify-content: flex-start !important;
+    }
+
+    .gap-x-6, .gap-y-2, .gap-4 {
+        gap: 0.5rem !important;
+    }
+
+    section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .experience-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+}

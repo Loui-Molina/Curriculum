@@ -1,21 +1,32 @@
 'use server';
 
-import puppeteer, {LaunchOptions} from 'puppeteer-core';
+import type {LaunchOptions} from 'puppeteer';
 import chromium from '@sparticuz/chromium';
+import {PDFOptions} from "puppeteer-core";
+
+let puppeteerModule: typeof import('puppeteer');
+if (process.env.NODE_ENV === 'production') {
+    puppeteerModule = require('puppeteer-core');
+} else {
+    puppeteerModule = require('puppeteer');
+}
 
 export async function downloadCvAsPdf() {
     let browser = null;
     try {
-        const executablePath = process.env.NODE_ENV === 'production'
-            ? await chromium.executablePath()
-            : puppeteer.executablePath();
+        const isProduction = process.env.NODE_ENV === 'production';
 
-        browser = await puppeteer.launch({
-            args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
-            executablePath: executablePath,
-            headless: chromium.headless,
+        const launchOptions: LaunchOptions = {
+            args: isProduction ? [...chromium.args, '--hide-scrollbars', '--disable-web-security'] : [],
+            headless: isProduction ? chromium.headless : true,
             ignoreHTTPSErrors: true,
-        } as LaunchOptions);
+            executablePath: isProduction
+                ? await chromium.executablePath()
+                : puppeteerModule.executablePath(),
+        } as LaunchOptions;
+
+        browser = await puppeteerModule.launch(launchOptions);
+
         const page = await browser.newPage();
 
         const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -31,18 +42,19 @@ export async function downloadCvAsPdf() {
             }
         });
 
-        const pdfBuffer = await page.pdf({
-            format: 'A4',
-            printBackground: true,
+        return await page.pdf({
+            printBackground: false,
             margin: {
-                top: '20mm',
-                right: '20mm',
-                bottom: '20mm',
-                left: '20mm',
+                top: '0mm',
+                right: '0mm',
+                bottom: '0mm',
+                left: '0mm',
             },
-        });
-
-        return pdfBuffer;
+            width: 900,
+            height: 6150,
+            omitBackground: true,
+            outline: false,
+        } as PDFOptions);
 
     } catch (error) {
         console.error('Error generating PDF:', error);
