@@ -28,6 +28,7 @@ export async function downloadCvAsPdf() {
 
         const page = await browser.newPage();
 
+        console.log({url: process.env.NEXT_PUBLIC_VERCEL_URL})
         const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
             ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
             : 'http://localhost:3000';
