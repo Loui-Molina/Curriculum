@@ -28,7 +28,6 @@ export async function downloadCvAsPdf() {
 
         const page = await browser.newPage();
 
-        console.log({url: process.env.NEXT_PUBLIC_VERCEL_URL})
         const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
             ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
             : 'http://localhost:3000';
@@ -44,7 +43,7 @@ export async function downloadCvAsPdf() {
                 left: '0mm',
             },
             width: 900,
-            height: 6150,
+            height: 6200,
             omitBackground: true,
             outline: false,
         });
