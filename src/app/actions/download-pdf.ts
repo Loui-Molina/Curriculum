@@ -43,7 +43,7 @@ export async function downloadCvAsPdf() {
                 left: '0mm',
             },
             width: 900,
-            height: 6200,
+            height: 6300,
             omitBackground: true,
             outline: false,
         });
