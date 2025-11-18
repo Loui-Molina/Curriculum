@@ -6,7 +6,7 @@ export const cvData = {
         email: "loui.developer@gmail.com",
         location: "Córdoba, Argentina",
     },
-    summary: "Passionate Full-Stack Developer with nearly 5 years in Java and Kotlin, specializing in dynamic, microservice-based web applications (Angular, Next.js, React, Vue.js). I excel at designing, developing, and deploying robust solutions, leveraging expertise in SQL/NoSQL databases, Docker, and Kubernetes. My core strength lies in deep code diving, solving complex technical challenges, and collaborating through pair programming and peer support. A proactive learner, I continuously expand my skillset via documentation, AI tools, and Udemy masterclasses. Primarily backend-focused, I'm an all-around solver eager to deliver impactful technical contributions.",
+    summary: "Passionate Full-Stack Developer with nearly 8 years in Java and Kotlin, specializing in dynamic, microservice-based web applications (Angular, Next.js, React, Vue.js). I excel at designing, developing, and deploying robust solutions, leveraging expertise in SQL/NoSQL databases, Docker, and Kubernetes. My core strength lies in deep code diving, solving complex technical challenges, and collaborating through pair programming and peer support. A proactive learner, I continuously expand my skillset via documentation, AI tools, and Udemy masterclasses. Primarily backend-focused, I'm an all-around solver eager to deliver impactful technical contributions.",
     experience: [
         {
             title: "Freelance Technical Developer / Full Stack Developer",
