@@ -6,7 +6,7 @@ export const cvData = {
         email: "loui.developer@gmail.com",
         location: "Córdoba, Argentina",
     },
-    summary: "Senior Full-Stack Engineer with 8+ years of experience delivering high-performance distributed systems using Java, Kotlin, and Next.js. I specialize in modernizing legacy financial monoliths into scalable, event-driven microservices ready for cloud deployment. Proven track record of leading technical teams, optimizing data layers for massive scale, and bridging the gap between complex backend logic and modern frontends. Currently expanding architectural scope through advanced GCP and Cybersecurity certifications.",
+    summary: "Senior Full-Stack Engineer with 8+ years of experience delivering high-performance distributed systems using Java, Kotlin, and Next.js. I specialize in modernizing legacy financial monoliths into scalable, event-driven microservices ready for cloud deployment. Proven track record of solving complex architectural challenges, optimizing data layers for massive scale, and bridging the gap between complex backend logic and modern frontends. Currently expanding architectural scope through advanced GCP and Cybersecurity certifications.",
 
     experience: [
         {
@@ -14,7 +14,7 @@ export const cvData = {
             company: "Self-Employed",
             dates: "Jan 2024 – Present",
             description: [
-                "Architected the end-to-end infrastructure for a high-traffic events ticketing platform, designed to support high-concurrency loads with failover redundancy.",
+                "Architected the end-to-end infrastructure for a high-traffic events ticketing platform, designing for high-concurrency loads with failover redundancy.",
                 "Engineered a high-performance financial dashboard using Next.js and Spring Boot, implementing Redis caching and optimized SQL indexing to minimize data retrieval latency.",
                 "Designed a type-safe, full-stack schema using Drizzle, Prisma, and Zod, establishing a zero-trust architecture that strictly validates data integrity at runtime.",
                 "Implemented secure, role-based authentication (RBAC) using NextAuth.js, ensuring future-proof compliance with strict data privacy standards.",
@@ -45,9 +45,9 @@ export const cvData = {
             company: "Superalgos",
             dates: "Nov 2021 – May 2022",
             description: [
-                "Served as Lead Architect for an open-source social trading network, overseeing a codebase designed for decentralized, high-frequency trading operations.",
+                "Served as Core Architect for an open-source social trading network, overseeing a codebase designed for decentralized, high-frequency trading operations.",
                 "Optimized Node.js API endpoints to handle high-throughput data streams, ensuring system stability under peak theoretical loads.",
-                "Mentored junior developers through rigorous code reviews and pair programming, establishing best practices that reduced bug regression rates.",
+                "Established rigorous code review standards and pair programming practices, significantly reducing bug regression rates.",
             ],
         },
         {
@@ -56,7 +56,7 @@ export const cvData = {
             dates: "Feb 2020 – Feb 2022",
             description: [
                 "Engineered the core credit servicing engine for Prelios (European Fintech Leader), architecting workflows to manage complex distressed loan portfolios.",
-                "Led the migration of a legacy banking monolith to a Dockerized Kotlin microservices architecture, establishing a foundation for horizontal scalability.",
+                "Executed the migration of a legacy banking monolith to a Dockerized Kotlin microservices architecture, establishing a foundation for horizontal scalability.",
                 "Integrated Keycloak for centralized identity management, unifying authentication across multiple distinct banking applications.",
                 "Automated CI/CD pipelines using Jenkins/GitLab, enabling continuous delivery and significantly reducing manual release overhead.",
             ],
@@ -101,8 +101,8 @@ export const cvData = {
             {name: "Integration Testing", level: 4}, {name: "End-to-End Testing", level: 3}
         ],
         "Soft Skills": [
-            {name: "Technical Leadership", level: 4}, {name: "System Design", level: 4},
-            {name: "Mentoring", level: 4}, {name: "Agile & Scrum", level: 4}
+            {name: "System Design", level: 4}, {name: "Mentoring", level: 4},
+            {name: "Agile & Scrum", level: 4}, {name: "Problem Solving", level: 4}
         ]
     },
     education: [
