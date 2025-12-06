@@ -32,12 +32,13 @@ export const cvData = {
             ],
         },
         {
-            title: "Java Developer",
+            title: "Java Developer (Bench / R&D)",
             company: "Distillery",
             dates: "May 2022 – Nov 2022",
             description: [
-                "Accelerated internal tool delivery by introducing reusable Kotlin libraries, drastically cutting boilerplate code for the development team.",
-                "Championed a Test-Driven Development (TDD) culture, driving a significant increase in unit test coverage and code reliability for core business modules.",
+                "Engaged in an intensive technical upskilling program focused on advanced Kotlin patterns and microservices architecture.",
+                "Completed specialized training modules on distributed systems and cloud-native best practices to prepare for high-complexity client engagements.",
+                "Conducted research on modern Java ecosystems, solidifying expertise in Spring Boot and reactive programming paradigms.",
             ],
         },
         {
