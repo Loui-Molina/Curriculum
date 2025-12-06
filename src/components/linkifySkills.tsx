@@ -52,11 +52,7 @@ const LinkifySkills: React.FC<LinkifySkillsProps> = ({text, allSkills}) => {
         parts.push(text.substring(lastIndex));
     }
 
-    return <>{parts.map((part) => (
-        <div>
-            {part}
-        </div>
-    ))}</>;
+    return <>{parts}</>;
 };
 
 export default LinkifySkills;
