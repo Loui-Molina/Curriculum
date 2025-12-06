@@ -6,19 +6,17 @@ export const cvData = {
         email: "loui.developer@gmail.com",
         location: "Córdoba, Argentina",
     },
-    summary: "Senior Full-Stack Engineer with 8+ years of expertise in architecting high-performance, microservice-based architectures using Java, Kotlin, and Modern Frontend frameworks (Next.js, React). I specialize in modernizing legacy systems and building scalable fintech and smart city solutions. Expert in SQL/NoSQL database optimization and containerized deployments. I combine deep technical problem-solving with collaborative leadership to deliver robust, client-centric software solutions.",
+    summary: "Senior Full-Stack Engineer with 8+ years of expertise architecting high-performance, cloud-native systems using Java, Kotlin, and Next.js. I specialize in the modernization of legacy financial monoliths into scalable, event-driven microservices. Proven track record of leading technical teams, optimizing SQL/NoSQL data layers for massive scale, and delivering mission-critical solutions for European fintech leaders. I combine deep architectural insight with a product-focused mindset to drive tangible business value.",
     experience: [
         {
             title: "Senior Full Stack Engineer (Independent Consultant)",
             company: "Self-Employed",
             dates: "Jan 2024 – Present",
             description: [
-                "Delivered enterprise-grade web applications for diverse business sectors, including a high-traffic events ticketing platform and complex financial tools.",
-                "Directed end-to-end development lifecycles, from architectural blueprinting to production deployment, ensuring 99.9% uptime and strict adherence to technical deadlines.",
-                "Architected responsive, high-conversion frontend interfaces using Next.js, React, Angular, and Tailwind CSS.",
-                "Engineered highly scalable backend microservices and APIs using Java (Spring Boot) and TypeScript, resolving critical performance bottlenecks.",
-                "Designed and optimized complex PostgreSQL database schemas using Drizzle and Prisma, enforcing strict data integrity via Zod.",
-                "Implemented military-grade authentication and type-safe API communication using NextAuth.js and tRPC.",
+                "Architected the end-to-end infrastructure for a high-traffic events ticketing platform, designed to support high-concurrency loads with failover redundancy.",
+                "Engineered a high-performance financial dashboard using Next.js and Spring Boot, implementing Redis caching and optimized SQL indexing to minimize data retrieval latency.",
+                "Designed a type-safe, full-stack schema using Drizzle, Prisma, and Zod, establishing a zero-trust architecture that strictly validates data integrity at runtime.",
+                "Implemented secure, role-based authentication (RBAC) using NextAuth.js, ensuring future-proof compliance with strict data privacy standards.",
             ],
         },
         {
@@ -26,10 +24,10 @@ export const cvData = {
             company: "Team International",
             dates: "Nov 2022 – Dec 2023",
             description: [
-                "Developed responsive, real-time frontend interfaces for IoT solutions using React, significantly enhancing data visualization capabilities.",
-                "Architected efficient backend microservices with Kotlin and Javalin to process high-volume real-time data streams for smart city infrastructure.",
-                "Designed robust database models in PostgreSQL, ensuring optimal query performance and data accessibility.",
-                "Enhanced system modularity and maintainability by refactoring legacy services into modern NestJS microservices.",
+                "Architected the backend ingestion engine for a Smart City IoT solution, capable of processing high-volume daily sensor events using Kotlin microservices.",
+                "Enhanced frontend rendering performance for real-time data visualization dashboards using React and optimized state management strategies.",
+                "Refactored legacy services into modular NestJS microservices, significantly reducing deployment complexity and CI/CD build times.",
+                "Designed scalable PostgreSQL database models to store historical IoT data, optimizing storage efficiency through table partitioning and indexing.",
             ],
         },
         {
@@ -37,8 +35,8 @@ export const cvData = {
             company: "Distillery",
             dates: "May 2022 – Nov 2022",
             description: [
-                "Accelerated the delivery of internal tooling by implementing advanced Kotlin patterns and robust Unit Testing strategies immediately upon joining.",
-                "Contributed to core development phases of enterprise projects, optimizing code quality and reducing technical debt.",
+                "Accelerated internal tool delivery by introducing reusable Kotlin libraries, drastically cutting boilerplate code for the development team.",
+                "Championed a Test-Driven Development (TDD) culture, driving a significant increase in unit test coverage and code reliability for core business modules.",
             ],
         },
         {
@@ -46,10 +44,9 @@ export const cvData = {
             company: "Superalgos",
             dates: "Nov 2021 – May 2022",
             description: [
-                "Provided technical leadership for an open-source social trading network, driving sprint planning and architectural decisions.",
-                "Designed and implemented high-engagement frontend features (feeds, profiles, real-time chats) using React and Redux.",
-                "Mentored junior developers through rigorous pair programming and code reviews, elevating the team's code quality standards.",
-                "Engineered and optimized high-throughput backend services using Node.js, ensuring scalable API performance under load.",
+                "Served as Lead Architect for an open-source social trading network, overseeing a codebase designed for decentralized, high-frequency trading operations.",
+                "Optimized Node.js API endpoints to handle high-throughput data streams, ensuring system stability under peak theoretical loads.",
+                "Mentored junior developers through rigorous code reviews and pair programming, establishing best practices that reduced bug regression rates.",
             ],
         },
         {
@@ -57,10 +54,10 @@ export const cvData = {
             company: "Dev VOWEL",
             dates: "Feb 2020 – Feb 2022",
             description: [
-                "Engineered end-to-end credit servicing and debt management ecosystems for Prelios, a European leader in Alternative Asset Management & Fintech.",
-                "Spearheaded the modernization of development workflows by integrating cutting-edge tools and CI/CD practices.",
-                "Bootstrapped and deployed microservices architectures using Kotlin, Docker, and Keycloak, significantly improving system scalability.",
-                "Developed and presented proof-of-concept prototypes to stakeholders, securing buy-in for modern stack migrations.",
+                "Engineered the core credit servicing engine for Prelios (European Fintech Leader), architecting workflows to manage complex distressed loan portfolios.",
+                "Led the migration of a legacy banking monolith to a Dockerized Kotlin microservices architecture, establishing a foundation for horizontal scalability.",
+                "Integrated Keycloak for centralized identity management, unifying authentication across multiple distinct banking applications.",
+                "Automated CI/CD pipelines using Jenkins/GitLab, enabling continuous delivery and significantly reducing manual release overhead.",
             ],
         },
         {
@@ -68,48 +65,39 @@ export const cvData = {
             company: "DXC Technology",
             dates: "Aug 2018 – Jan 2020",
             description: [
-                "Led the strategic migration of monolithic Sabre booking software to a distributed microservices architecture.",
-                "Ensured continuous operational stability of legacy systems while progressively decoupling core business logic.",
-                "Developed high-performance API endpoints and business logic using Java, Spring Boot, and Hibernate.",
+                "Executed the strategic strangulation of the monolithic Sabre booking software, successfully decoupling core modules into independent microservices.",
+                "Maintained operational stability during the migration of mission-critical booking data for major airline clients.",
+                "Optimized complex Hibernate queries, resolving long-standing performance bottlenecks in report generation.",
             ],
         },
     ],
     skills: {
         "Core Tech Stack": [
-            {name: "Java", level: 4}, {name: "Kotlin", level: 4},
-            {name: "Spring Boot", level: 4}, {name: "Node.js", level: 4},
-            {name: "React", level: 4}, {name: "Next.js", level: 4}
+            {name: "Java (Spring Boot)", level: 4}, {name: "Kotlin", level: 4},
+            {name: "Node.js (NestJS)", level: 4},
+            {name: "React & Next.js", level: 4}, {name: "TypeScript", level: 4}
         ],
-        "Languages & Scripting": [
-            {name: "JavaScript", level: 4}, {name: "TypeScript", level: 4},
-            {name: "SQL", level: 4}
+        "Cloud & DevOps": [
+            {name: "Docker & Kubernetes", level: 4}, {name: "CI/CD (Jenkins/GitLab)", level: 4},
+            {name: "PostgreSQL & SQL Optimization", level: 4}, {name: "Microservices Architecture", level: 4}
         ],
-        "Frontend Ecosystem": [
-            {name: "Tailwind CSS", level: 4}, {name: "Redux", level: 3},
-            {name: "Angular", level: 3}, {name: "Vue.js", level: 3}
+        "Specialized Domains": [
+            {name: "Fintech & Banking Systems", level: 4},
+            {name: "High-Performance APIs", level: 4},
+            {name: "Event-Driven Architecture", level: 3},
+            {name: "IoT Data Processing", level: 3}
         ],
-        "Backend & Database": [
-            {name: "PostgreSQL", level: 4}, {name: "Relational DBs", level: 4},
-            {name: "Microservices", level: 4}, {name: "RESTful APIs", level: 4},
-            {name: "Hibernate", level: 3}, {name: "Prisma", level: 3},
-            {name: "Javalin", level: 3}, {name: "NestJS", level: 3}
-        ],
-        "DevOps & Tools": [
-            {name: "Git", level: 4}, {name: "Docker", level: 3},
-            {name: "Jira", level: 3}, {name: "Swagger", level: 3},
-            {name: "Vercel", level: 3}
-        ],
-        "Methodologies & Soft Skills": [
-            {name: "Agile & Scrum", level: 4},
-            {name: "Problem Solving", level: 4},
-            {name: "Pair Programming", level: 4},
-            {name: "System Architecture", level: 4}
+        "Soft Skills & Leadership": [
+            {name: "Technical Leadership", level: 4},
+            {name: "System Design", level: 4},
+            {name: "Mentoring", level: 4},
+            {name: "English (C2 - Proficient)", level: 4}
         ]
     },
     education: {
         degree: "Bachelor's Degree in Computing Engineering",
         university: "21st Century Business University",
-        dates: "Jan 2019 – Present",
+        dates: "2019 – Present",
     },
     languages: [
         {name: "English", proficiency: "Full Professional Proficiency (C2)"},
