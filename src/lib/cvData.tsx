@@ -74,31 +74,50 @@ export const cvData = {
     skills: {
         "Core Tech Stack": [
             {name: "Java (Spring Boot)", level: 4}, {name: "Kotlin", level: 4},
-            {name: "Node.js (NestJS)", level: 4},
-            {name: "React & Next.js", level: 4}, {name: "TypeScript", level: 4}
+            {name: "Node.js (NestJS)", level: 4}, {name: "React & Next.js", level: 4},
+            {name: "TypeScript", level: 4}, {name: "SQL & PostgreSQL", level: 4}
         ],
         "Cloud & DevOps": [
-            {name: "Docker & Kubernetes", level: 4}, {name: "CI/CD (Jenkins/GitLab)", level: 4},
-            {name: "PostgreSQL & SQL Optimization", level: 4}, {name: "Microservices Architecture", level: 4}
+            {name: "Docker", level: 4}, {name: "Kubernetes", level: 3},
+            {name: "AWS (ECS/S3)", level: 3}, {name: "CI/CD (Jenkins/GitLab)", level: 4},
+            {name: "Google Cloud (GCP)", level: 3}, {name: "Nginx", level: 3}
         ],
-        "Specialized Domains": [
-            {name: "Fintech & Banking Systems", level: 4},
-            {name: "High-Performance APIs", level: 4},
-            {name: "Event-Driven Architecture", level: 3},
-            {name: "IoT Data Processing", level: 3}
+        "Security & Identity": [
+            {name: "OAuth2 & OIDC", level: 3}, {name: "JWT Strategy", level: 3},
+            {name: "Keycloak", level: 3}, {name: "NextAuth.js", level: 4},
+            {name: "OWASP Principles", level: 3}
         ],
-        "Soft Skills & Leadership": [
-            {name: "Technical Leadership", level: 4},
-            {name: "System Design", level: 4},
-            {name: "Mentoring", level: 4},
-            {name: "English (C2 - Proficient)", level: 4}
+        "Architecture & Data": [
+            {name: "Microservices", level: 4}, {name: "Event-Driven Arch", level: 3},
+            {name: "Kafka / RabbitMQ", level: 3}, {name: "Redis Caching", level: 3},
+            {name: "Hibernate / Prisma", level: 3}, {name: "REST & GraphQL", level: 4}
+        ],
+        "Testing & Quality": [
+            {name: "JUnit & Mockito", level: 4}, {name: "TDD / BDD", level: 3},
+            {name: "Integration Testing", level: 4}, {name: "End-to-End Testing", level: 3}
+        ],
+        "Soft Skills": [
+            {name: "Technical Leadership", level: 4}, {name: "System Design", level: 4},
+            {name: "Mentoring", level: 4}, {name: "Agile & Scrum", level: 4}
         ]
     },
-    education: {
-        degree: "Bachelor's Degree in Computing Engineering",
-        university: "21st Century Business University",
-        dates: "2019 – Present",
-    },
+    education: [
+        {
+            degree: "Professional Certificate: Google Cloud Platform (GCP) Architecture",
+            university: "Google Cloud Skills Boost",
+            dates: "2024 – Present (Specialization in GKE & Cloud Architecture)",
+        },
+        {
+            degree: "Google Cybersecurity Professional Certificate",
+            university: "Coursera / Google",
+            dates: "2024 – Present (Focus: DevSecOps & Threat Mitigation)",
+        },
+        {
+            degree: "University Studies in Computing Engineering",
+            university: "21st Century Business University",
+            dates: "2019 – 2022 (Completed concurrent with professional career)",
+        },
+    ],
     languages: [
         {name: "English", proficiency: "Full Professional Proficiency (C2)"},
         {name: "Spanish", proficiency: "Native / Bilingual"},
