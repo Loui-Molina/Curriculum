@@ -14,30 +14,49 @@ interface LinkifySkillsProps {
 }
 
 const LinkifySkills: React.FC<LinkifySkillsProps> = ({text, allSkills}) => {
-    const sortedSkills = [...allSkills].sort((a, b) => b.name.length - a.name.length);
+    const keywordMap = new Map<string, Skill>();
 
-    const skillNames = sortedSkills.map(s => s.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-    const regex = new RegExp(`\\b(${skillNames.join('|')})\\b`, 'gi');
+    allSkills.forEach(skill => {
+        keywordMap.set(skill.name.toLowerCase(), skill);
+
+        const parts = skill.name.split(/[\(\)\/&,]+/).map(s => s.trim());
+
+        parts.forEach(part => {
+            if (part.length > 1) {
+                if (!keywordMap.has(part.toLowerCase())) {
+                    keywordMap.set(part.toLowerCase(), skill);
+                }
+            }
+        });
+    });
+
+    const sortedKeywords = Array.from(keywordMap.keys()).sort((a, b) => b.length - a.length);
+
+    if (sortedKeywords.length === 0) return <>{text}</>;
+
+    const escapedKeywords = sortedKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    const regex = new RegExp(`\\b(${escapedKeywords.join('|')})\\b`, 'gi');
 
     const parts: React.ReactNode[] = [];
     let lastIndex = 0;
 
-    text.replace(regex, (match, skillName, offset) => {
+    text.replace(regex, (match, keyword, offset) => {
         if (offset > lastIndex) {
             parts.push(text.substring(lastIndex, offset));
         }
 
-        const foundSkill = sortedSkills.find(s => s.name.toLowerCase() === skillName.toLowerCase());
+        const lowerKeyword = keyword.toLowerCase();
+        const foundSkill = keywordMap.get(lowerKeyword);
 
         if (foundSkill) {
             const skillId = foundSkill.name.replace(/\s+/g, '-').toLowerCase();
             parts.push(
                 <Link
-                    key={`${skillName}-${offset}`}
+                    key={`${keyword}-${offset}`}
                     href={`/#${skillId}`}
                     className="text-emerald-400 hover:text-emerald-300 font-medium underline decoration-emerald-500/30 hover:decoration-emerald-500 transition-all duration-200"
                 >
-                    {skillName}
+                    {match}
                 </Link>
             );
         } else {
