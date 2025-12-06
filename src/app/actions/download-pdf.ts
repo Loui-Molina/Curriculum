@@ -26,7 +26,7 @@ export async function downloadCvAsPdf() {
         };
 
         browser = await puppeteerModule.launch(launchOptions);
-        const page: any = await browser.newPage();
+        const page = await browser.newPage();
 
         const htmlContent = `
         <!DOCTYPE html>
@@ -168,6 +168,7 @@ export async function downloadCvAsPdf() {
 
         await page.setContent(htmlContent, {waitUntil: 'networkidle0'});
 
+        // @ts-ignore
         const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
         const pageHeight = bodyHeight + 80;
 
