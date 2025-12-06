@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import {FaEnvelope, FaMapMarkerAlt, FaPhone} from 'react-icons/fa';
 
 interface HeaderProps {
     name: string;
