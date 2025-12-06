@@ -6,7 +6,8 @@ export const cvData = {
         email: "loui.developer@gmail.com",
         location: "Córdoba, Argentina",
     },
-    summary: "Senior Full-Stack Engineer with 8+ years of expertise architecting high-performance, cloud-native systems using Java, Kotlin, and Next.js. I specialize in the modernization of legacy financial monoliths into scalable, event-driven microservices. Proven track record of leading technical teams, optimizing SQL/NoSQL data layers for massive scale, and delivering mission-critical solutions for European fintech leaders. I combine deep architectural insight with a product-focused mindset to drive tangible business value.",
+    summary: "Senior Full-Stack Engineer with 8+ years of experience delivering high-performance distributed systems using Java, Kotlin, and Next.js. I specialize in modernizing legacy financial monoliths into scalable, event-driven microservices ready for cloud deployment. Proven track record of leading technical teams, optimizing data layers for massive scale, and bridging the gap between complex backend logic and modern frontends. Currently expanding architectural scope through advanced GCP and Cybersecurity certifications.",
+
     experience: [
         {
             title: "Senior Full Stack Engineer (Independent Consultant)",
@@ -78,9 +79,12 @@ export const cvData = {
             {name: "TypeScript", level: 4}, {name: "SQL & PostgreSQL", level: 4}
         ],
         "Cloud & DevOps": [
-            {name: "Docker", level: 4}, {name: "Kubernetes", level: 3},
-            {name: "AWS (ECS/S3)", level: 3}, {name: "CI/CD (Jenkins/GitLab)", level: 4},
-            {name: "Google Cloud (GCP)", level: 3}, {name: "Nginx", level: 3}
+            {name: "Docker", level: 4},
+            {name: "CI/CD (Jenkins/GitLab)", level: 4},
+            {name: "Kubernetes", level: 3},
+            {name: "AWS (ECS/S3)", level: 3},
+            {name: "Google Cloud (GCP)", level: 2},
+            {name: "Nginx", level: 3}
         ],
         "Security & Identity": [
             {name: "OAuth2 & OIDC", level: 3}, {name: "JWT Strategy", level: 3},
@@ -105,17 +109,17 @@ export const cvData = {
         {
             degree: "Professional Certificate: Google Cloud Platform (GCP) Architecture",
             university: "Google Cloud Skills Boost",
-            dates: "2025– Present (Specialization in GKE & Cloud Architecture)",
+            dates: "2025 – Present (In Progress)",
         },
         {
             degree: "Google Cybersecurity Professional Certificate",
             university: "Coursera / Google",
-            dates: "2025 – Present (Focus: DevSecOps & Threat Mitigation)",
+            dates: "2025 – Present (In Progress)",
         },
         {
             degree: "University Studies in Computing Engineering",
             university: "21st Century Business University",
-            dates: "2019 – 2022 (Completed concurrent with professional career)",
+            dates: "2019 – 2022",
         },
     ],
     languages: [
