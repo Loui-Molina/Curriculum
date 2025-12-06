@@ -105,12 +105,12 @@ export const cvData = {
         {
             degree: "Professional Certificate: Google Cloud Platform (GCP) Architecture",
             university: "Google Cloud Skills Boost",
-            dates: "2024 – Present (Specialization in GKE & Cloud Architecture)",
+            dates: "2025– Present (Specialization in GKE & Cloud Architecture)",
         },
         {
             degree: "Google Cybersecurity Professional Certificate",
             university: "Coursera / Google",
-            dates: "2024 – Present (Focus: DevSecOps & Threat Mitigation)",
+            dates: "2025 – Present (Focus: DevSecOps & Threat Mitigation)",
         },
         {
             degree: "University Studies in Computing Engineering",

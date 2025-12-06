@@ -9,20 +9,32 @@ import Education from "@/components/education";
 import Languages from "@/components/languages";
 
 const Home: React.FC = () => {
-
     const allSkillsFlat = Object.values(cvData.skills).flat();
 
     return (
-        <div className="min-h-screen bg-gray-900 text-gray-100 p-4 md:p-8 relative">
+        <div className="min-h-screen bg-slate-950 text-slate-300 py-12 px-4 sm:px-6 lg:px-8 relative">
             <FloatingDownloadButton/>
-            <div className="container mx-auto max-w-4xl bg-gray-900 p-6 rounded-lg shadow-xl">
+            {/* Expanded max-width for a more executive feel */}
+            <main className="container mx-auto max-w-5xl space-y-16">
                 <Header name={cvData.name} title={cvData.title} contact={cvData.contact}/>
-                <Summary summary={cvData.summary} allSkills={allSkillsFlat}/>
-                <Experience experience={cvData.experience} allSkills={allSkillsFlat}/>
-                <Skills skills={cvData.skills}/>
-                <Education education={cvData.education}/>
-                <Languages languages={cvData.languages}/>
-            </div>
+
+                {/* Two column layout for larger screens: Summary on top, then Exp/Skills split or stacked */}
+                <div className="space-y-16">
+                    <Summary summary={cvData.summary} allSkills={allSkillsFlat}/>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                        <div className="lg:col-span-8 space-y-16">
+                            <Experience experience={cvData.experience} allSkills={allSkillsFlat}/>
+                            <Education education={cvData.education}/>
+                        </div>
+
+                        <div className="lg:col-span-4 space-y-12">
+                            <Skills skills={cvData.skills}/>
+                            <Languages languages={cvData.languages}/>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     );
 };

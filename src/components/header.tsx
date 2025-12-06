@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 interface HeaderProps {
     name: string;
@@ -13,21 +13,33 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
     return (
-        <header className="mb-8 text-center bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h1 className="text-5xl font-bold text-purple-500 mb-2">{name}</h1>
-            <p className="text-2xl text-gray-300 mb-4">{title}</p>
-            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-gray-400 text-lg max-w-fit mx-auto">
-                <a href={`tel:${contact.phone}`}
-                   className="flex items-center hover:text-purple-500 transition-colors duration-200">
-                    <FaPhone className="mr-2" /> {contact.phone}
-                </a>
-                <a href={`mailto:${contact.email}`}
-                   className="flex items-center hover:text-purple-500 transition-colors duration-200">
-                    <FaEnvelope className="mr-2" /> {contact.email}
-                </a>
-                <span className="flex items-center">
-                    <FaMapMarkerAlt className="mr-2" /> {contact.location}
-                </span>
+        <header className="border-b border-slate-800 pb-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-100 uppercase">
+                        {name}
+                    </h1>
+                    <p className="text-xl md:text-2xl text-emerald-400 font-medium mt-3 tracking-wide">
+                        {title}
+                    </p>
+                </div>
+
+                <div className="flex flex-col items-start md:items-end gap-2 text-slate-400 text-sm md:text-base font-mono">
+                    <a href={`mailto:${contact.email}`}
+                       className="flex items-center hover:text-emerald-400 transition-colors group">
+                        <span className="group-hover:translate-x-[-2px] transition-transform">{contact.email}</span>
+                        <FaEnvelope className="ml-3 text-emerald-500/70" />
+                    </a>
+                    <a href={`tel:${contact.phone}`}
+                       className="flex items-center hover:text-emerald-400 transition-colors group">
+                        <span className="group-hover:translate-x-[-2px] transition-transform">{contact.phone}</span>
+                        <FaPhone className="ml-3 text-emerald-500/70" />
+                    </a>
+                    <span className="flex items-center text-slate-500">
+                        {contact.location}
+                        <FaMapMarkerAlt className="ml-3 text-slate-600" />
+                    </span>
+                </div>
             </div>
         </header>
     );

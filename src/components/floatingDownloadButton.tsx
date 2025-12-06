@@ -15,9 +15,13 @@ const FloatingDownloadButton: React.FC = () => {
             const pdfBuffer = await downloadCvAsPdf();
             const blob = new Blob([pdfBuffer], {type: 'application/pdf'});
             const url = URL.createObjectURL(blob);
+
+            const date = new Date().toISOString().split('T')[0];
+            const fileName = `Axel_Loui_Molina_CV_${date}.pdf`;
+
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Axel_Loui_Molina_CV.pdf';
+            a.download = fileName;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -31,12 +35,12 @@ const FloatingDownloadButton: React.FC = () => {
     };
 
     return (
-        <div className="fixed top-4 right-4 z-50">
+        <div className="fixed bottom-8 right-8 z-50 print:hidden">
             <button id="download-pdf-button"
                     onClick={handleDownload}
-                    className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-5 rounded-full
-                    shadow-lg flex items-center justify-center transition-colors duration-300 focus:outline-none
-                    focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75"
+                    className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-4 px-6 rounded-full
+                    shadow-2xl shadow-emerald-900/50 flex items-center justify-center transition-all duration-300
+                    hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900"
                     disabled={isLoading}>
                 {isLoading ? (
                     <span className="animate-spin mr-2">
@@ -48,9 +52,9 @@ const FloatingDownloadButton: React.FC = () => {
                 ) : (
                     <FaDownload className="mr-2"/>
                 )}
-                {isLoading ? 'Generating PDF...' : 'Download CV'}
+                {isLoading ? 'Processing...' : 'Download PDF'}
             </button>
-            {error && <p className="text-red-500 mt-2 text-sm">{error}</p>}
+            {error && <p className="text-red-500 mt-2 text-sm bg-slate-900 p-2 rounded shadow-lg absolute bottom-16 right-0 w-max">{error}</p>}
         </div>
     );
 };

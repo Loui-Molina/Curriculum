@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Skill {
     name: string;
-    level: number;
+    level: number; // 1-4
 }
 
 interface SkillsProps {
@@ -12,37 +12,43 @@ interface SkillsProps {
 }
 
 const Skills: React.FC<SkillsProps> = ({skills}) => {
-    const getLevelIndicator = (level: number) => {
-        const indicators = [];
-        for (let i = 0; i < 4; i++) {
-            if (i < level) {
-                indicators.push(<span key={i} className="inline-block w-4 h-4 bg-purple-500 rounded-full mr-1"></span>);
-            } else {
-                indicators.push(<span key={i} className="inline-block w-4 h-4 bg-gray-600 rounded-full mr-1"></span>);
-            }
-        }
-        return indicators;
-    };
-
     return (
-        <section className="mb-8 p-6 bg-gray-800 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold text-purple-500 mb-4">Skills</h2>
-            {Object.entries(skills).map(([category, skillList]) => (
-                <div key={category} className="mb-6">
-                    <h3 className="text-xl font-semibold text-gray-100 mb-3">{category}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {skillList.map((skill) => (
-                            <div key={skill.name} id={skill.name.replace(/\s+/g, '-').toLowerCase()}
-                                 className="flex items-center bg-gray-700 p-3 rounded-lg shadow-sm">
-                                <span className="text-gray-300 flex-grow">{skill.name}</span>
-                                <div className="flex-shrink-0 flex items-center">
-                                    {getLevelIndicator(skill.level)}
+        <section>
+            <h2 className="text-2xl font-bold text-slate-100 mb-8 flex items-center">
+                <span className="bg-emerald-500/10 text-emerald-400 p-2 rounded mr-3 text-lg">03</span>
+                Technical Arsenal
+            </h2>
+
+            <div className="space-y-8">
+                {Object.entries(skills).map(([category, skillList]) => (
+                    <div key={category}>
+                        <h3 className="text-sm uppercase tracking-wider font-semibold text-slate-500 mb-4 border-b border-slate-800 pb-2">
+                            {category}
+                        </h3>
+                        <div className="flex flex-wrap gap-3">
+                            {skillList.map((skill) => (
+                                <div
+                                    key={skill.name}
+                                    id={skill.name.replace(/\s+/g, '-').toLowerCase()}
+                                    className="group relative bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-md overflow-hidden transition-all duration-300"
+                                >
+                                    {/* Proficiency Bar Background */}
+                                    <div className="absolute bottom-0 left-0 h-1 bg-slate-800 w-full"></div>
+                                    {/* Proficiency Bar Fill */}
+                                    <div
+                                        className="absolute bottom-0 left-0 h-1 bg-emerald-500 transition-all duration-500"
+                                        style={{ width: `${(skill.level / 4) * 100}%` }}
+                                    ></div>
+
+                                    <div className="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-emerald-100">
+                                        {skill.name}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </section>
     );
 };

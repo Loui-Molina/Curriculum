@@ -25,21 +25,21 @@ const LinkifySkills: React.FC<LinkifySkillsProps> = ({text, allSkills}) => {
     text.replace(regex, (match, skillName, offset) => {
         if (offset > lastIndex) {
             parts.push(text.substring(lastIndex, offset));
-}
+        }
 
         const foundSkill = sortedSkills.find(s => s.name.toLowerCase() === skillName.toLowerCase());
 
         if (foundSkill) {
             const skillId = foundSkill.name.replace(/\s+/g, '-').toLowerCase();
             parts.push(
-        <Link
+                <Link
                     key={`${skillName}-${offset}`}
                     href={`/#${skillId}`}
-            className="text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
-        >
-            {skillName}
-        </Link>
-    );
+                    className="text-emerald-400 hover:text-emerald-300 font-medium underline decoration-emerald-500/30 hover:decoration-emerald-500 transition-all duration-200"
+                >
+                    {skillName}
+                </Link>
+            );
         } else {
             parts.push(match);
         }

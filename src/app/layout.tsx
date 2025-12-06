@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Axel Molina CV",
     description: "Java/Kotlin Developer | Full-Stack Problem Solver",
+    icons: {
+        icon: '/favicon.svg',
+    },
 };
 
 export default function RootLayout({
